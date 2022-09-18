@@ -14,4 +14,6 @@
     <string name="title_activity_providers">activity_Providers</string>
     <string name="edit">Editar</string>
     <string name="delete">Excluir</string>
+    <string name="Product">Produtos</string>
+    <string name="Forns">Fornecedores</string>
 </resources>
