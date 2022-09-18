@@ -10,7 +10,7 @@ Table products {
   barcode varchar(255) [not null]
   name varchar(255) [not null]
   stock int [not null]
-  supplyer_id int [not null]
+  supplier_id int [not null]
 }
 
-Ref: products.supplyer_id < suppliers.id
+Ref: products.supplier_id < suppliers.id

@@ -10,7 +10,7 @@ CREATE TABLE products (
   barcode varchar(255) NOT NULL,
   name varchar(255) NOT NULL,
   stock int NOT NULL,
-  supplyer_id integer NOT NULL,
+  supplier_id integer NOT NULL,
 
   FOREIGN KEY (supplyer_id)
   REFERENCES suppliers (id) 
