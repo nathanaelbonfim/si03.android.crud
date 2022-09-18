@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="1dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -69,14 +70,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/provider_select"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-            android:layout_width="264dp"
-            android:layout_height="wrap_content"
+            android:layout_width="223dp"
+            android:layout_height="66dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:hint="@string/provider_list">
 
             <AutoCompleteTextView
-                android:layout_width="match_parent"
+                android:layout_width="218dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:inputType="none" />
@@ -91,17 +92,21 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="-100dp"
+            android:background="#03DAC5"
             android:clickable="true"
+            android:contentDescription="@string/app_name"
             app:srcCompat="@android:drawable/ic_input_add" />
 
     </RelativeLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/prod_button"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="250dp"
-        android:text="@string/button" />
+        android:layout_height="73dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/button"
+        android:visibility="visible" />
 
 
 </LinearLayout>
