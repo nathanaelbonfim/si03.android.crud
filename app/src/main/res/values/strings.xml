@@ -11,4 +11,7 @@
     <string name="label_provider_name">Nome</string>
     <string name="label_tel_number">Número de telefone</string>
     <string name="button2">Cadastrar fornecedor</string>
+    <string name="title_activity_providers">activity_Providers</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Excluir</string>
 </resources>
