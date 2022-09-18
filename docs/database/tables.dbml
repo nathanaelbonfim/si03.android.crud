@@ -1,0 +1,16 @@
+Table suppliers {
+  id integer [primary key, increment]
+  name varchar(255) [not null]
+  cnpj varchar(14) [not null, unique]
+  whatsapp int(14) [not null]
+}
+
+Table products {
+  id integer [primary key, increment]
+  barcode varchar(255) [not null]
+  name varchar(255) [not null]
+  stock int [not null]
+  supplyer_id int [not null]
+}
+
+Ref: products.supplyer_id < suppliers.id
