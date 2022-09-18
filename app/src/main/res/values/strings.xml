@@ -5,4 +5,5 @@
     <string name="label_name">Nome do produto</string>
     <string name="label_qtd">Quantidade em estoque</string>,
     <string name="provider_list">Fornecedor</string>
+    <string name="button">Cadastrar produto</string>
 </resources>
