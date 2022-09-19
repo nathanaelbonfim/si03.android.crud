@@ -94,6 +94,7 @@
             android:layout_marginRight="-100dp"
             android:background="#03DAC5"
             android:clickable="true"
+            android:onClick="cadastraFornecedor"
             android:contentDescription="@string/app_name"
             app:srcCompat="@android:drawable/ic_input_add" />
 
@@ -106,7 +107,8 @@
         android:layout_marginTop="100dp"
         android:layout_marginBottom="50dp"
         android:text="@string/button"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:onClick="cadastraProduto"/>
 
 
 </LinearLayout>

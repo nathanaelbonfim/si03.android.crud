@@ -16,4 +16,5 @@
     <string name="delete">Excluir</string>
     <string name="Product">Produtos</string>
     <string name="Forns">Fornecedores</string>
+    <string name="CadastroForn">Cadastrar Fornecedor</string>
 </resources>
