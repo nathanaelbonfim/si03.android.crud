@@ -7,6 +7,8 @@ import android.util.Log;
 import com.si03.android.bim3.crud.interfaces.Table;
 import com.si03.android.bim3.crud.libs.Database;
 
+import java.util.ArrayList;
+
 public class Product implements Table {
     private final String TABLE_NAME = "products";
     public Database db;

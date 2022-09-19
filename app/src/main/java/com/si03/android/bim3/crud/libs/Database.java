@@ -5,14 +5,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
 public class Database extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "CrudDatabase";
     private static final int DATABASE_VERSION = 1;
 
-    public Database(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, @Nullable int version) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    public Database(Context applicationContext) {
+        super(applicationContext, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override

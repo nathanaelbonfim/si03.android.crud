@@ -7,6 +7,8 @@ import android.util.Log;
 import com.si03.android.bim3.crud.interfaces.Table;
 import com.si03.android.bim3.crud.libs.Database;
 
+import java.util.ArrayList;
+
 public class Supplier implements Table {
     private final String TABLE_NAME = "supplier";
     public Database db;
@@ -36,7 +38,6 @@ public class Supplier implements Table {
 
         Log.d("teste", result.toString());
         return false;
-
     }
 
     @Override
@@ -53,6 +54,33 @@ public class Supplier implements Table {
         Log.d("Teste", result.toString());
 
         return null;
+    }
+
+    public ArrayList<Supplier> getAll() {
+        ArrayList<Supplier> suppliers = null;
+
+        String sql = "";
+
+        sql.concat(String.format(
+                "SELECT * FROM %s",
+                TABLE_NAME
+        ));
+
+        Cursor cursor = db.query(sql);
+        cursor.moveToFirst();
+
+        while (cursor.moveToNext()) {
+            Supplier supplier = new Supplier(null);
+
+            supplier.id = cursor.getInt(0);
+            supplier.name = cursor.getString(1);
+            supplier.cnpj = cursor.getString(2);
+            supplier.whatsapp = cursor.getInt(3);
+
+            suppliers.add(supplier);
+        }
+
+        return suppliers;
     }
 
     @Override
