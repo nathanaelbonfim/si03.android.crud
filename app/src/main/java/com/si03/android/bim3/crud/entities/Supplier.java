@@ -10,7 +10,7 @@ import com.si03.android.bim3.crud.libs.Database;
 import java.util.ArrayList;
 
 public class Supplier implements Table {
-    private final String TABLE_NAME = "supplier";
+    private final String TABLE_NAME = "suppliers";
     public Database db;
 
     public int id;
@@ -29,15 +29,14 @@ public class Supplier implements Table {
         String safeName = DatabaseUtils.sqlEscapeString(name);
         String safeCnpj = DatabaseUtils.sqlEscapeString(cnpj);
 
-        sql.concat(String.format(
-                "INSERT INTO %s (name, cnpj, whatsapp) VALUES (%s, %s, %i)",
-                TABLE_NAME, safeName, safeCnpj
-        ));
+        sql = String.format(
+                "INSERT INTO %s (name, cnpj, whatsapp) VALUES (%s, %s, %d)",
+                TABLE_NAME, safeName, safeCnpj, whatsapp
+        );
 
-        Cursor result = db.query(sql);
+        Log.e("query: ", sql);
 
-        Log.d("teste", result.toString());
-        return false;
+        return db.execSQL(sql);
     }
 
     @Override
@@ -45,7 +44,7 @@ public class Supplier implements Table {
         String sql = "";
 
         sql.concat(String.format(
-                "SELECT * FROM %s WHERE id = %i",
+                "SELECT * FROM %s WHERE id = %d",
                 TABLE_NAME, id
         ));
 
@@ -88,15 +87,14 @@ public class Supplier implements Table {
         String sql = "";
 
         sql.concat(String.format(
-                "DELETE FROM %s WHERE id = %i",
+                "DELETE FROM %s WHERE id = %d",
                 TABLE_NAME, id
         ));
 
-        Cursor result = db.query(sql);
+//        Cursor result = db.query(sql);
 
-        Log.d("teste", result.toString());
+        return db.execSQL(sql);
 
-        return false;
     }
 
     @Override
@@ -107,20 +105,17 @@ public class Supplier implements Table {
         String safeCnpj = DatabaseUtils.sqlEscapeString(cnpj);
 
         sql.concat(String.format(
-                "UPDATE %s SET (name = %s, cnpj = %s, whatsapp = %i) WHERE id = %i",
+                "UPDATE %s SET (name = %s, cnpj = %s, whatsapp = %d) WHERE id = %d",
                 TABLE_NAME, safeName, safeCnpj, whatsapp, id
         ));
 
-        Cursor result = db.query(sql);
+        return db.execSQL(sql);
 
-        Log.d("teste", result.toString());
-
-        return false;
     }
 
     @Override
     public boolean recordExists(int id) {
-        String sql = String.format("SELECT id FROM %s WHERE id = %i", TABLE_NAME, id);
+        String sql = String.format("SELECT id FROM %s WHERE id = %d", TABLE_NAME, id);
 
         return false;
     }

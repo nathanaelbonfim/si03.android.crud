@@ -27,5 +27,18 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         return db.rawQuery(sql, null);
+//        return db.rawQuery(sql, null);
+    }
+
+    public boolean execSQL(String sql) {
+        SQLiteDatabase db = getReadableDatabase();
+
+        try {
+            db.execSQL(sql);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+//        return db.rawQuery(sql, null);
     }
 }

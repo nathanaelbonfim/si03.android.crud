@@ -63,14 +63,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/prod_button2"
+        android:id="@+id/provider_button2"
         android:layout_width="match_parent"
         android:layout_height="73dp"
         android:layout_marginTop="150dp"
         android:text="@string/CadastroForn"
-        android:visibility="visible"
-        android:onClick="cadastroFornecedor"
-        />
+        android:visibility="visible"/>
+<!--        android:onClick="cadastroFornecedor"-->
+
 
 
 </LinearLayout>
