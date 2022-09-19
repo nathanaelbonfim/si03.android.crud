@@ -55,6 +55,35 @@ public class Product implements Table {
         return null;
     }
 
+    public ArrayList<Product> getAll() {
+        ArrayList<Product> products = null;
+
+        String sql = "";
+
+        sql.concat(String.format(
+                "SELECT * FROM %s",
+                TABLE_NAME
+        ));
+
+
+        Cursor cursor = db.query(sql);
+        cursor.moveToFirst();
+
+        while (cursor.moveToNext()) {
+            Product product = new Product(null);
+
+            product.id = cursor.getInt(0);
+            product.barcode = cursor.getString(1);
+            product.name = cursor.getString(2);
+            product.stock = cursor.getInt(3);
+            product.supplier_id = cursor.getInt(4);
+
+            products.add(product);
+        }
+
+        return products;
+    }
+
     @Override
     public boolean delete(int id) {
         String sql = "";
