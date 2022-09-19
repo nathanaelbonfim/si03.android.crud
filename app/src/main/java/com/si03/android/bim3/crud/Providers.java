@@ -13,6 +13,7 @@ public class Providers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_providers);
     }
+
     public void cadastrarFornecedor(View view){
 
         Intent intent = new Intent(this, ProviderForm.class);
